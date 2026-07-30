@@ -58,9 +58,5 @@ Supported modifier names are `command`, `control`, `option`, and `shift`.
 `keyCode` is the macOS hardware key code; `49` is Space. Quit and reopen the app
 after changing the shortcut.
 
-For compatibility, AeroPeek also reads the previous
-`~/.config/aerospace-overview/config.json` location when the new path does not
-exist.
-
 Do not assign the same shortcut to AeroSpace itself—the helper needs to receive
 both the key-down and key-up events.

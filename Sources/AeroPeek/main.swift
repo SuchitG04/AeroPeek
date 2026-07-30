@@ -27,17 +27,11 @@ struct ShortcutConfig: Decodable {
     var keyCode: Int = 49
 
     static func load() -> ShortcutConfig {
-        let configDirectory = URL(fileURLWithPath: NSHomeDirectory(), isDirectory: true)
-            .appendingPathComponent(".config")
-        let candidateURLs = [
-            configDirectory.appendingPathComponent("aeropeek/config.json"),
-            configDirectory.appendingPathComponent("aerospace-overview/config.json")
-        ]
-        for url in candidateURLs {
-            if let data = try? Data(contentsOf: url),
-               let config = try? JSONDecoder().decode(ShortcutConfig.self, from: data) {
-                return config
-            }
+        let url = URL(fileURLWithPath: NSHomeDirectory(), isDirectory: true)
+            .appendingPathComponent(".config/aeropeek/config.json")
+        if let data = try? Data(contentsOf: url),
+           let config = try? JSONDecoder().decode(ShortcutConfig.self, from: data) {
+            return config
         }
         return ShortcutConfig()
     }
