@@ -58,6 +58,9 @@ changing it:
 
 Icon generation requires Python 3 and Pillow.
 
+The earlier muted tiled-eye concept is kept at
+`Resources/AppIcon/AeroPeek-subtle-1024.png`.
+
 ## Change the shortcut
 
 Copy `config.example.json` to:
