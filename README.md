@@ -46,6 +46,18 @@ open "$HOME/Applications/AeroPeek.app"
 Add it to **System Settings → General → Login Items** if you want it to launch
 when you sign in.
 
+## App icon
+
+The 1024px source artwork lives at
+`Resources/AppIcon/AeroPeek-1024.png`. Regenerate the macOS icon bundle after
+changing it:
+
+```sh
+./scripts/generate-icon.py
+```
+
+Icon generation requires Python 3 and Pillow.
+
 ## Change the shortcut
 
 Copy `config.example.json` to:
