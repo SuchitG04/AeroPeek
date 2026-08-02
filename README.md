@@ -41,6 +41,12 @@ You can also pin or hide the overview from the menu bar, which is useful when in
 
 The highlighted card adds the context that is easy to lose track of while tiling: the active AeroSpace binding mode, root layout, monitor number, and window and application counts.
 
+### In the wild
+
+![AeroPeek floating over a real macOS desktop with its translucent blur](docs/screenshots/aeropeek-in-the-wild.png)
+
+<p align="center"><sub>AeroPeek, helpfully showing where AeroPeek was being built while we discussed how its screenshot was built.</sub></p>
+
 ## Install
 
 You will need macOS 13 or newer, [AeroSpace](https://github.com/nikitabobko/AeroSpace), and the Xcode command-line tools.
