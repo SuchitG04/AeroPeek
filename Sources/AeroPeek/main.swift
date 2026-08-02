@@ -697,6 +697,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 let application = NSApplication.shared
+if let argumentIndex = CommandLine.arguments.firstIndex(of: "--render-readme-screenshots"),
+   CommandLine.arguments.indices.contains(argumentIndex + 1) {
+    let directory = URL(fileURLWithPath: CommandLine.arguments[argumentIndex + 1], isDirectory: true)
+    do {
+        try ReadmeScreenshotRenderer.render(to: directory)
+        exit(EXIT_SUCCESS)
+    } catch {
+        FileHandle.standardError.write(Data("Screenshot rendering failed: \(error)\n".utf8))
+        exit(EXIT_FAILURE)
+    }
+}
+
 let delegate = AppDelegate()
 application.delegate = delegate
 application.run()
